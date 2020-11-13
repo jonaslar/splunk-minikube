@@ -1,0 +1,14 @@
+global:
+  splunk:
+    hec:
+      token: 4053b7b8-bba5-4c0b-af61-60ba279097b2
+      host: splunk.example.com
+      port: 8000
+      insecureSSL: true
+      indexName: k8s_logs
+
+
+splunk-kubernetes-metrics:
+  splunk:
+    hec:
+      indexName: k8s_metrics

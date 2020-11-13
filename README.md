@@ -81,4 +81,6 @@ spec:
 192.168.99.111 splunk.example.com
 
 
+## Run SCFK Chard
 
+ helm install my-splunk-connect -f values.yaml https://github.com/splunk/splunk-connect-for-kubernetes/releases/download/1.4.3/splunk-connect-for-kubernetes-1.4.3.tgz

@@ -1,5 +1,24 @@
 # splunk-minikube
 
+## Install Splunk Operator
+
+Info, https://splunk.github.io/splunk-operator/#creating-splunk-enterprise-deployments 
+
+> kubectl apply -f https://github.com/splunk/splunk-operator/releases/download/0.2.0/splunk-operator-install.yaml
+
+## Add Splunk Custom Resource for StandAlone server
+
+``` s1
+cat <<EOF | kubectl apply -f -
+apiVersion: enterprise.splunk.com/v1beta1
+kind: Standalone
+metadata:
+  name: s1
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
+EOF
+```
+
 ## Add ingress
 
 ``` ingress
@@ -61,7 +80,5 @@ spec:
 /etc/hosts:
 192.168.99.111 splunk.example.com
 
-## Splunk Operator
 
-https://splunk.github.io/splunk-operator/#creating-splunk-enterprise-deployments
 
